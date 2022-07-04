@@ -3,22 +3,22 @@ const hora = document.querySelector('.hora');
 const minuto = document.querySelector('.minuto');
 const secundo = document.querySelector('.secundo');
 
-const getTimeUnit = unit => unit < 10 ? '0' + unit : unit
+const getTimeUnit = unit => unit < 10 ? '0' + unit : unit;
 
 const insertDates = ({ days, hours, minutes, seconds}) => {
-    dia.textContent = getTimeUnit(days)
-    hora.textContent = getTimeUnit(hours)
-    minuto.textContent = getTimeUnit(minutes)
-    secundo.textContent = getTimeUnit(seconds)
+    dia.textContent = getTimeUnit(days);
+    hora.textContent = getTimeUnit(hours);
+    minuto.textContent = getTimeUnit(minutes);
+    secundo.textContent = getTimeUnit(seconds);
 }
 
 const tell = () => {
-    const month = 'july'
-    const day = 21
-    const year = 2022
-    const hour = 14
-    const minute = 00
-    const second = 00
+    const month = 'july';
+    const day = 21;
+    const year = 2022;
+    const hour = 14;
+    const minute = 00;
+    const second = 00;
     const dayCopa = new Date(`${month} ${day} ${year} ${hour}:${minute}:${second}`);
 
     const now = new Date();
@@ -28,15 +28,31 @@ const tell = () => {
     const minutes = Math.floor(diference / 1000 / 60) % 60
     const seconds = Math.floor(diference / 1000) % 60
 
-    insertDates({ days, hours, minutes, seconds})
+    insertDates({ days, hours, minutes, seconds});
+}
+
+const spinnerAppend = () => {
 }
 
 setTimeout(() => {
-    const container = document.querySelector('.container')
-    const spinner = document.querySelector('.lds-roller')
-
-    spinner.style.display = 'none'
-    container.style.display = 'block'
+    const container = document.querySelector('.container');
+    const spinner = document.querySelector('.lds-roller');
+     
+    spinner.style.display = 'none';
+    container.style.display = 'block';
+    
+    spinnerAppend();
 }, 1000)
 
-setInterval(tell,1000)
+setTimeout(() => {
+    const iframe = document.queryselector('.iframe');
+    const spinner = document.querySelector('.spinner-iframe');
+     
+    spinner.style.display = 'none';
+    
+    iframe.style.display = 'block';
+    
+    spinnerAppend();
+}, 5000)
+
+setInterval(tell,1000);
