@@ -62,7 +62,6 @@ p{
 }
 
 .iframe{
-    display: none;
     margin: 10px;
     border: 1px solid black
 }
@@ -152,4 +151,3 @@ p{
       transform: rotate(360deg);
     }
   }
-  

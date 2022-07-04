@@ -31,28 +31,12 @@ const tell = () => {
     insertDates({ days, hours, minutes, seconds});
 }
 
-const spinnerAppend = () => {
-}
-
 setTimeout(() => {
     const container = document.querySelector('.container');
     const spinner = document.querySelector('.lds-roller');
      
     spinner.style.display = 'none';
     container.style.display = 'block';
-    
-    spinnerAppend();
 }, 1000)
-
-setTimeout(() => {
-    const iframe = document.queryselector('.iframe');
-    const spinner = document.querySelector('.spinner-iframe');
-     
-    spinner.style.display = 'none';
-    
-    iframe.style.display = 'block';
-    
-    spinnerAppend();
-}, 5000)
 
 setInterval(tell,1000);
